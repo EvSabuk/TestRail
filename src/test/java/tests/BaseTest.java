@@ -10,9 +10,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pages.*;
-import steps.LoginStep;
-import steps.MilestoneStep;
-import steps.ProjectStep;
+import steps.*;
 import utils.TestListener;
 
 import java.time.Duration;
@@ -30,6 +28,8 @@ public class BaseTest {
     LoginStep loginStep;
     ProjectStep projectStep;
     MilestoneStep milestoneStep;
+    TestRunStep testRunStep;
+    TestCaseStep testCaseStep;
 
     LoginPage loginPage;
     DashboardPage dashboardPage;
@@ -38,8 +38,12 @@ public class BaseTest {
     ProjectPage projectPage;
     AddMilestonePage addMilestonePage;
     MilestonesPage milestonesPage;
-    TestRunPage testRunPage;
+    TestRunsPage testRunsPage;
     AddTestRunPage addTestRunPage;
+    TestCasesPage testCasesPage;
+    AddTestCasesPage addTestCasesPage;
+    TestCasePage testCasePage;
+    TestRunPage testRunPage;
 
 
     @Parameters({"browser"})
@@ -73,9 +77,15 @@ public class BaseTest {
         addMilestonePage = new AddMilestonePage(driver);
         milestonesPage = new MilestonesPage(driver);
         milestoneStep = new MilestoneStep(driver);
-        testRunPage = new TestRunPage(driver);
+        testRunsPage = new TestRunsPage(driver);
         addTestRunPage = new AddTestRunPage(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        testRunStep = new TestRunStep(driver);
+        testCasesPage = new TestCasesPage(driver);
+        addTestCasesPage = new AddTestCasesPage(driver);
+        testCaseStep = new TestCaseStep(driver);
+        testCasePage = new TestCasePage(driver);
+        testRunPage = new TestRunPage(driver);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return driver;
     }
 

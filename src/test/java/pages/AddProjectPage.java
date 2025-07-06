@@ -91,7 +91,7 @@ public class AddProjectPage extends BasePage {
     }
 
     public AddProjectPage createNewProject(Project project) {
-        log.info("Creating an account {}", project.getProjectName());
+        log.info("Creating the project '{}'", project.getProjectName());
         fillInput(PROJECT_NAME, project.getProjectName());
         fillTextarea(ANNOUNCEMENT, project.getAnnouncement());
         clickCheckbox(SHOW_THE_ANNOUNCEMENT);

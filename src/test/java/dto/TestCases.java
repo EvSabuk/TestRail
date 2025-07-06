@@ -2,6 +2,7 @@ package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import java.util.List;
 
 @AllArgsConstructor
 @Getter
@@ -15,11 +16,7 @@ public class TestCases {
     private String testCaseStatus;
     private String testCaseAssignedTo;
     private String testCaseEstimate;
-    private String testCaseReferences;
     private String testCaseAutomationType;
     private String testCasePreconditions;
-    private String testCaseActualResult1;
-    private String testCaseExpectedResult1;
-    private String testCaseActualResult2;
-    private String testCaseExpectedResult2;
+    private List<Step> steps;
 }

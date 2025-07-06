@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class TestRun {
+public class TestRuns {
 
     private String testRunReferences;
     private String testRunDescription;

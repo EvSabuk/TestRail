@@ -31,6 +31,8 @@ public class MilestoneStep {
                 .openMilestonesPage();
         milestonesPage.isPageOpened()
                 .clickAddMilestone();
-        addMilestonePage.createNewMilestone(milestone);
+        addMilestonePage.isPageOpened()
+                .createNewMilestone(milestone)
+                .isPageOpened();
     }
 }

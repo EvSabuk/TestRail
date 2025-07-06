@@ -22,7 +22,7 @@ public class LoginStep {
         //log.info("Log in with credentials: '{}', '{}'", user, password);
         loginPage.open()
                 .isPageOpened()
-                .login("", "")
+                .login("","")
                 .isPageOpened();
     }
 }

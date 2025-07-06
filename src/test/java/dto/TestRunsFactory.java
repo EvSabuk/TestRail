@@ -3,11 +3,11 @@ package dto;
 import com.github.javafaker.Faker;
 import tests.BaseTest;
 
-public class TestRunFactory extends BaseTest {
+public class TestRunsFactory extends BaseTest {
 
-    public static TestRun getTestRun() {
+    public static TestRuns getTestRun() {
         Faker faker = new Faker();
-        return new TestRun(faker.animal().name(),
+        return new TestRuns(faker.animal().name(),
                 faker.color().name()
         );
     }

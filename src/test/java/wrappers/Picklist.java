@@ -3,13 +3,17 @@ package wrappers;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 @Log4j2
 public class Picklist {
 
     WebDriver driver;
     String label;
-    String selectPattern = "//label[text()='%s']/ancestor::lightning-picklist//";
+    String selectPattern = "//label[starts-with(normalize-space(.), '%s')]/following-sibling::div";
 
     public Picklist(WebDriver driver, String label) {
         this.driver = driver;
@@ -17,11 +21,15 @@ public class Picklist {
     }
 
     public void select(String option) {
-        log.info("Selecting '{}' inside picklist '{}'", option,label);
+        log.info("Selecting '{}' inside picklist '{}'", option, label);
         driver.findElement(By.xpath(
-                String.format(selectPattern + "button", label))).click();
+                String.format(selectPattern, label))).click();
         driver.findElement(By.xpath(String.format(
-                selectPattern + "lightning-base-combobox-item//span[text()='%s']",
+                selectPattern + "/child::div//li[starts-with(normalize-space(.), '%s')]",
                 label, option))).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        new WebDriverWait(driver, Duration.ofSeconds(1)).until(ExpectedConditions.invisibilityOfElementLocated
+                (By.xpath("//div[@class = 'chosen-container chosen-container-single chosen-with-drop chosen-container-active']")));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-}
+}//table//tr//input[@type = 'checkbox']  /following::input[@type = 'checkbox']

@@ -22,4 +22,5 @@ public class Input {
                         "//label[starts-with(normalize-space(.), '%s')]/following-sibling::input", label)))
                 .sendKeys(text);
     }
+
 }

@@ -2,8 +2,9 @@ package tests;
 
 import dto.Project;
 import dto.ProjectFactory;
-import dto.TestRun;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class ProjectTest extends BaseTest {
 
@@ -14,7 +15,11 @@ public class ProjectTest extends BaseTest {
         dashboardPage.clickAddProjectButton();
         addProjectPage.isPageOpened()
                 .createNewProject(project);
-
+        int projectId = projectsPage.getProjectId(project.getProjectName());
+        projectPage.openProjectById(projectId);
+        assertEquals(projectPage.getTitle(),
+                project.getProjectName(),
+                "Project is not created");
     }
 
     @Test
@@ -22,7 +27,10 @@ public class ProjectTest extends BaseTest {
         loginStep.auth();
         String projectName = projectStep.createProject();
         projectsPage.isPageOpened()
-                        .deleteProject(projectName);
+                .deleteProject(projectName);
+        assertEquals(projectPage.getTitle(),
+                project.getProjectName(),
+                "Project is not created");
     }
 
     @Test

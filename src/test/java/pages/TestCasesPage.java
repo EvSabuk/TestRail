@@ -33,7 +33,7 @@ public class TestCasesPage extends BasePage {
         return this;
     }
 
-    public AddTestCasesPage clickAddMilestone() {
+    public AddTestCasesPage clickAddTestCase() {
         log.info("Click on the 'Add Test Case' button");
         driver.findElement(ADD_TEST_CASE_BUTTON).click();
         return new AddTestCasesPage(driver);

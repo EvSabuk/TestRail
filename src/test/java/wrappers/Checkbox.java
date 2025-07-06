@@ -22,4 +22,12 @@ public class Checkbox {
                         , label)))
                 .click();
     }
+
+    public void clickInGrid(String label) {
+        log.info("Click on the '{}' checkbox", label);
+        driver.findElement(By.xpath(String.format(
+                        "//a//span[starts-with(normalize-space(.), '%s')]/preceding::input[@type = 'checkbox']"
+                        , label)))
+                .click();
+    }
 }
