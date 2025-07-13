@@ -1,0 +1,227 @@
+{
+    "offset": 0,
+    "limit": 250,
+    "size": 12,
+    "_links": {
+        "next": null,
+        "prev": null
+    },
+    "projects": [
+        {
+            "id": 677,
+            "name": "Berge and Sons",
+            "announcement": "koala",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/677",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 693,
+            "name": "Greenfelder, DuBuque and Ward",
+            "announcement": "coyote",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/693",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 694,
+            "name": "Frami and Sons",
+            "announcement": "baboon",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/694",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 695,
+            "name": "Koss-Paucek",
+            "announcement": "Sylvan",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/695",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 696,
+            "name": "Gaylord, Morissette and Kulas",
+            "announcement": "Siren",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/696",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 697,
+            "name": "Ruecker-Windler",
+            "announcement": "Botchling",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/697",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 698,
+            "name": "Koepp-Rodriguez",
+            "announcement": "Godling",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/698",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 699,
+            "name": "Altenwerth LLC",
+            "announcement": "Doppler",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/699",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 700,
+            "name": "Wilderman-Rau",
+            "announcement": "Wham-a-Wham",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/700",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 701,
+            "name": "McClure, Cremin and Gerhold",
+            "announcement": "Morvudd",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/701",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 702,
+            "name": "Konopelski LLC",
+            "announcement": "Longlocks",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/702",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 703,
+            "name": "Rogahn-Senger",
+            "announcement": "Cloud Giant",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/703",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "offset": 0,
+    "limit": 250,
+    "size": 3,
+    "_links": {
+        "next": null,
+        "prev": null
+    },
+    "projects": [
+        {
+            "id": 677,
+            "name": "Mertz-Koss",
+            "announcement": "Abaya",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/677",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 693,
+            "name": "Greenfelder, DuBuque and Ward",
+            "announcement": "coyote",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/693",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 694,
+            "name": "Frami and Sons",
+            "announcement": "baboon",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/694",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        }
+    ]
+}
