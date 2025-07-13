@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      USER: ${{secrets.EMAIL}}
+      EMAIL: ${{secrets.EMAIL}}
       PASS: ${{secrets.PASSWORD}}
 
     steps:
@@ -27,9 +27,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run tests
-      run: mvn clean test -Duser=$USER -Dpassword=$PASS
+      run: mvn clean test -Demail=EMAIL -Dpassword=$PASS
     - name: Run tests regression testing
-      run: mvn clean test -DxsuiteXmlFile='src/test/resources/RegressionTesting.xml' -Duser=$USER -Dpassword=$PASS
+      run: mvn clean test -DxsuiteXmlFile='src/test/resources/RegressionTesting.xml' -Demail=EMAIL -Dpassword=$PASS
 
     - name: Get Allure history
       uses: actions/checkout@v2
