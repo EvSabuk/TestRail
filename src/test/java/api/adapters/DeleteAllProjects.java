@@ -23,10 +23,10 @@ public class DeleteAllProjects extends BaseApi {
             log.info("No projects found to delete.");
             return;
         }
-        for (Map<String, Object> project : projects) {
+        for (int i = 1; i< projects.size(); i++) {
+       Map<String, Object> project = projects.get(i);
             if (project != null && project.get(ID_KEY) != null) {
                 String projectId = project.get(ID_KEY).toString();
-
                 request(Method.POST, BASE_URI + DELETE_URI + projectId);
             } else {
                 log.warn("Project {} has null id, skipping", project);
