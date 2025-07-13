@@ -18,5 +18,5 @@ public class TestCases {
     private String testCaseEstimate;
     private String testCaseAutomationType;
     private String testCasePreconditions;
-    private List<Step> steps;
+    private List<TestCaseStep> steps;
 }

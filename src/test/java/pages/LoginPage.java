@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 @Log4j2
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     private static final By USER_NAME_FIELD = By.id("name"),
             PASSWORD_FIELD = By.id("password"),
@@ -19,7 +19,7 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    @Step("Opening 'Login' page")
+    @Step("Opening 'Login' page.")
     public LoginPage open() {
         log.info("Opening 'Login' page");
         driver.get(BASE_URL);
@@ -37,9 +37,9 @@ public class LoginPage extends BasePage{
         return this;
     }
 
-    @Step("Log in with credentials: email '{user}' and password '{password}'")
+    @Step("Log in with credentials: email '{user}' and password '{password}'.")
     public DashboardPage login(String user, String password) {
-        log.info("Log in with credentials: '{}', '{}'", user, password);
+        log.info("Log in with credentials: '{}', '{}'.", user, password);
         driver.findElement(USER_NAME_FIELD).sendKeys(user);
         driver.findElement(PASSWORD_FIELD).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();

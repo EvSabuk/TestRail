@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Test Rail Regression Test" parallel="tests">
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+        <listener class-name="listeners.AnnotationTransformer"/>
+    </listeners>
+    <test name="Mat">
+        <parameter name="Test Coverage" value="Mat"/>
+        <groups>
+            <run>
+                <include name="mat"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.api"/>
+            <package name="tests.ui"/>
+        </packages>
+    </test>
+    <test name="Smoke">
+        <parameter name="Test Coverage" value="Smoke"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.api"/>
+            <package name="tests.ui"/>
+        </packages>
+    </test>
+</suite>

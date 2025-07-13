@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -11,7 +12,8 @@ import org.testng.Assert;
 public class TestCasePage extends BasePage {
 
     private static final By EDIT_TEST_CASE_BUTTON = By.xpath(
-            "//a[@data-testid='testCaseEditButton']");
+            "//a[@data-testid='testCaseEditButton']"),
+            SUCCESS_MESSAGE_TITLE = By.xpath("//div[@data-testid='messageSuccessDivBox']");
 
     public TestCasePage(WebDriver driver) {
         super(driver);
@@ -31,5 +33,11 @@ public class TestCasePage extends BasePage {
             Assert.fail("The 'Test Case' page is not opened");
         }
         return this;
+    }
+
+    @Step("Get title for the 'Test Case' page")
+    public String getSuccessMessage() {
+        log.info("Get title for the 'Test Case' page");
+        return driver.findElement(SUCCESS_MESSAGE_TITLE).getText();
     }
 }

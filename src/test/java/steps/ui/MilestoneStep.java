@@ -1,10 +1,10 @@
-package steps;
+package steps.ui;
 
 import dto.Milestone;
 import dto.MilestoneFactory;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
-
 import pages.AddMilestonePage;
 import pages.MilestonesPage;
 import pages.ProjectPage;
@@ -24,9 +24,10 @@ public class MilestoneStep {
         addMilestonePage = new AddMilestonePage(driver);
     }
 
-    public void createMilestone() {
+    @Step("Creating a Milestone.")
+    public String createMilestone() {
         Milestone milestone = MilestoneFactory.getMilestone();
-        log.info("Milestone is created with a name '{}'", milestone.getMilestoneName());
+        log.info("Creating a Milestone with the title '{}'.", milestone.getMilestoneName());
         projectPage.isPageOpened()
                 .openMilestonesPage();
         milestonesPage.isPageOpened()
@@ -34,5 +35,6 @@ public class MilestoneStep {
         addMilestonePage.isPageOpened()
                 .createNewMilestone(milestone)
                 .isPageOpened();
+        return milestone.getMilestoneName();
     }
 }

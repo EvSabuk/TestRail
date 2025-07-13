@@ -1,8 +1,7 @@
 package dto;
 
 import com.github.javafaker.Faker;
-import tests.BaseTest;
-
+import tests.ui.BaseTest;
 import java.util.concurrent.TimeUnit;
 
 public class MilestoneFactory extends BaseTest {

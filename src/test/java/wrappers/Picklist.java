@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 @Log4j2
@@ -27,9 +26,10 @@ public class Picklist {
         driver.findElement(By.xpath(String.format(
                 selectPattern + "/child::div//li[starts-with(normalize-space(.), '%s')]",
                 label, option))).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-        new WebDriverWait(driver, Duration.ofSeconds(1)).until(ExpectedConditions.invisibilityOfElementLocated
-                (By.xpath("//div[@class = 'chosen-container chosen-container-single chosen-with-drop chosen-container-active']")));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.invisibilityOfElementLocated
+                (By.xpath("//div[@class = 'chosen-container chosen-container-single " +
+                        "chosen-with-drop chosen-container-active']")));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-}//table//tr//input[@type = 'checkbox']  /following::input[@type = 'checkbox']
+}
