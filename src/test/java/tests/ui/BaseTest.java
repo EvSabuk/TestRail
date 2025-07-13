@@ -13,6 +13,7 @@ import pages.*;
 import listeners.TestListener;
 import steps.api.DeleteProjectStep;
 import steps.ui.*;
+
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -103,8 +104,12 @@ public class BaseTest {
             takeScreenshot(driver);
         }
         if (driver != null) {
-            new DeleteAllProjects();
             driver.quit();
         }
+    }
+
+    @AfterSuite(alwaysRun = true, description = "Clean account")
+    public void cleanAccount() {
+        new DeleteAllProjects().deleteAllProjects();
     }
 }
