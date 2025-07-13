@@ -13,11 +13,9 @@ import pages.*;
 import listeners.TestListener;
 import steps.api.DeleteProjectStep;
 import steps.ui.*;
-
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-
 import static listeners.AllureUtils.takeScreenshot;
 
 @Listeners(TestListener.class)
