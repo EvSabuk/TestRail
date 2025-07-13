@@ -1,7 +1,8 @@
-package steps;
+package steps.ui;
 
 import dto.TestRuns;
 import dto.TestRunsFactory;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import pages.*;
@@ -23,9 +24,10 @@ public class TestRunStep {
         testRunPage = new TestRunPage(driver);
     }
 
+    @Step("Creating a Test Run.")
     public void createTestRun() {
         TestRuns testRuns = TestRunsFactory.getTestRun();
-        log.info("Test Run is created");
+        log.info("Creating a Test Run.");
         projectPage.isPageOpened()
                 .openTestRunPage();
         testRunsPage.isPageOpened()
@@ -35,9 +37,10 @@ public class TestRunStep {
         projectPage.openOverviewTab();
     }
 
+    @Step("Creating a Test Run with selected Test Cases.")
     public void createTestRunWithCases() {
         TestRuns testRuns = TestRunsFactory.getTestRun();
-        log.info("Test Run is created");
+        log.info("Creating a Test Run with cases.");
         projectPage.isPageOpened()
                 .openTestRunPage();
         testRunsPage.isPageOpened()

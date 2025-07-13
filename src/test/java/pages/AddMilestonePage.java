@@ -1,6 +1,7 @@
 package pages;
 
 import dto.Milestone;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -11,11 +12,10 @@ import wrappers.Checkbox;
 import wrappers.Datepicker;
 import wrappers.Input;
 import wrappers.TextArea;
-
 import java.util.Date;
 
 @Log4j2
-public class AddMilestonePage extends BasePage{
+public class AddMilestonePage extends BasePage {
 
     private static final By TITLE_ADD_MILESTONE = By.xpath("//div[@data-testid='testCaseContentHeaderTitle']"),
             ADD_MILESTONE_BUTTON = By.id("accept");
@@ -62,14 +62,16 @@ public class AddMilestonePage extends BasePage{
         new Datepicker(driver, label).inputDate(value);
     }
 
+    @Step("Click on the 'Add Milestone' button on the 'Add Milestone' page.")
     public MilestonesPage clickAddMilestoneButton() {
-        log.info("Click on the 'Add Milestone' button on the 'Add Milestone' page");
+        log.info("Click on the 'Add Milestone' button on the 'Add Milestone' page.");
         driver.findElement(ADD_MILESTONE_BUTTON).click();
         return new MilestonesPage(driver);
     }
 
+    @Step("Creating an Milestone.")
     public AddMilestonePage createNewMilestone(Milestone milestone) {
-        log.info("Creating an milestone with name {}", milestone.getMilestoneName());
+        log.info("Creating an milestone with name '{}'.", milestone.getMilestoneName());
         fillInput(MILESTONE_NAME, milestone.getMilestoneName());
         fillInput(MILESTONE_REFERENCES, milestone.getMilestoneReferences());
         fillTextarea(MILESTONE_DESCRIPTION, milestone.getMilestoneDescription());

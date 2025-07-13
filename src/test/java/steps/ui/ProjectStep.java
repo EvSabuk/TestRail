@@ -1,7 +1,8 @@
-package steps;
+package steps.ui;
 
 import dto.Project;
 import dto.ProjectFactory;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import pages.AddProjectPage;
@@ -26,18 +27,20 @@ public class ProjectStep {
         projectPage = new ProjectPage(driver);
     }
 
+    @Step("Creating a Project.")
     public String createProject() {
         Project project = ProjectFactory.getProject();
-        log.info("Project is created with a name '{}'", project.getProjectName());
+        log.info("Creating a Project with the title '{}'.", project.getProjectName());
         dashboardPage.clickAddProjectButton();
         addProjectPage.isPageOpened()
-                      .createNewProject(project);
+                .createNewProject(project);
         return project.getProjectName();
     }
 
+    @Step("Creating a Project and open it.")
     public void createOpenProject() {
         Project project = ProjectFactory.getProject();
-        log.info("Project is created with a name '{}'", project.getProjectName());
+        log.info("Creating a Project with the title '{}' and open it.", project.getProjectName());
         dashboardPage.clickAddProjectButton();
         addProjectPage.isPageOpened()
                 .createNewProject(project);

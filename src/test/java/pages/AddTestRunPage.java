@@ -1,6 +1,7 @@
 package pages;
 
 import dto.TestRuns;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -12,17 +13,18 @@ import wrappers.Input;
 import wrappers.TextArea;
 
 @Log4j2
-public class AddTestRunPage extends BasePage{
+public class AddTestRunPage extends BasePage {
 
-
-    private static final By TITLE_ADD_TEST_TUN = By.xpath("//div[@data-testid='testCaseContentHeaderTitle']"),
+    private static final By TITLE_ADD_TEST_TUN = By.xpath(
+            "//div[@data-testid='testCaseContentHeaderTitle']"),
             ADD_TEST_RUN_BUTTON = By.id("accept"),
             ALL_CASES_BUTTON = By.id("selectCasesTreeAll"),
             OK_BUTTON = By.id("selectCasesSubmit"),
-    CHANGE_SELECTION_BUTTON = By.xpath("//a[starts-with(normalize-space(.), 'change selection')]");
+            CHANGE_SELECTION_BUTTON = By.xpath(
+                    "//a[starts-with(normalize-space(.), 'change selection')]");
     private static final String TEST_RUN_REFERENCES = "References",
             TEST_RUN_DESCRIPTION = "Description",
-                    SELECT_TEST_CASES = "Select specific test cases";
+            SELECT_TEST_CASES = "Select specific test cases";
 
     public AddTestRunPage(WebDriver driver) {
         super(driver);
@@ -56,40 +58,46 @@ public class AddTestRunPage extends BasePage{
         new Checkbox(driver, label).click(label);
     }
 
+    @Step("Click on the 'Add Test Run' button on the 'Add Test Run & Results' page")
     public TestRunsPage clickAddTestRunButton() {
-        log.info("Click on the 'Add Test Run' button on the 'Add Test Run & Results' page");
+        log.info("Click on the 'Add Test Run' button on the 'Add Test Run & Results' page.");
         driver.findElement(ADD_TEST_RUN_BUTTON).click();
         return new TestRunsPage(driver);
     }
 
+    @Step("Click on the 'Change Selection' button on the 'Add Test Run")
     public TestRunsPage clickChangeSelectionButton() {
-        log.info("Click on the 'Change Selection' button on the 'Add Test Run");
+        log.info("Click on the 'Change Selection' button on the 'Add Test Run.");
         driver.findElement(CHANGE_SELECTION_BUTTON).click();
         return new TestRunsPage(driver);
     }
 
+    @Step("Click on the 'Select All' button on the 'Select Cases' window.")
     public TestRunsPage clickSelectAllButton() {
-        log.info("Click on the 'Select All' button on the 'Select Cases window");
+        log.info("Click on the 'Select All' button on the 'Select Cases' window.");
         driver.findElement(ALL_CASES_BUTTON).click();
         return new TestRunsPage(driver);
     }
 
+    @Step("Click on the 'Ok' button on the 'Select Cases' window.")
     public TestRunsPage clickOkButton() {
-        log.info("Click on the 'Ok' button on the 'Select Cases window");
+        log.info("Click on the 'Ok' button on the 'Select Cases' window.");
         driver.findElement(OK_BUTTON).click();
         return new TestRunsPage(driver);
     }
 
+    @Step("Creating an Test Run.")
     public AddTestRunPage createNewTestRun(TestRuns testRuns) {
-        log.info("Creating an Test Run");
+        log.info("Creating an Test Run.");
         fillInput(TEST_RUN_REFERENCES, testRuns.getTestRunReferences());
         fillTextarea(TEST_RUN_DESCRIPTION, testRuns.getTestRunDescription());
         clickAddTestRunButton();
         return this;
     }
 
+    @Step("Creating an Test Run with Cases.")
     public AddTestRunPage createNewTestRunWithCases(TestRuns testRuns) {
-        log.info("Creating an Test Run with Cases");
+        log.info("Creating an Test Run with Cases.");
         fillInput(TEST_RUN_REFERENCES, testRuns.getTestRunReferences());
         fillTextarea(TEST_RUN_DESCRIPTION, testRuns.getTestRunDescription());
         clickCheckbox(SELECT_TEST_CASES);

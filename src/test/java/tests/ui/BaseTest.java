@@ -1,22 +1,23 @@
-package tests;
+package tests.ui;
 
+import api.adapters.DeleteAllProjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pages.*;
-import steps.*;
-import utils.TestListener;
-
+import listeners.TestListener;
+import steps.api.DeleteProjectStep;
+import steps.ui.*;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.Map;
 
-import static utils.AllureUtils.takeScreenshot;
+import static listeners.AllureUtils.takeScreenshot;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -24,14 +25,11 @@ public class BaseTest {
     WebDriver driver;
     WebDriverWait wait;
     SoftAssert softAssert;
-
     LoginStep loginStep;
     ProjectStep projectStep;
     MilestoneStep milestoneStep;
     TestRunStep testRunStep;
     TestCaseStep testCaseStep;
-
-    LoginPage loginPage;
     DashboardPage dashboardPage;
     AddProjectPage addProjectPage;
     ProjectsPage projectsPage;
@@ -44,10 +42,10 @@ public class BaseTest {
     AddTestCasesPage addTestCasesPage;
     TestCasePage testCasePage;
     TestRunPage testRunPage;
-
+    public DeleteProjectStep projectAPIstep;
 
     @Parameters({"browser"})
-    @BeforeMethod(alwaysRun = true, description = "Открытие браузера")
+    @BeforeMethod(alwaysRun = true, description = "Setup browser")
     public WebDriver setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -59,15 +57,24 @@ public class BaseTest {
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-infobars");
+            if (System.getProperty("headless", "true").equals("true")) {
+                options.addArguments("--headless=new");
+            }
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
             driver = new ChromeDriver(options);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
+            ((ChromeDriver) driver).executeCdpCommand("Emulation.setDeviceMetricsOverride", Map.of(
+                    "width", 1920,
+                    "height", 1080,
+                    "deviceScaleFactor", 1,
+                    "mobile", false
+            ));
         }
         context.setAttribute("driver", driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         softAssert = new SoftAssert();
-        loginPage = new LoginPage(driver);
         loginStep = new LoginStep(driver);
         addProjectPage = new AddProjectPage(driver);
         dashboardPage = new DashboardPage(driver);
@@ -85,15 +92,19 @@ public class BaseTest {
         testCaseStep = new TestCaseStep(driver);
         testCasePage = new TestCasePage(driver);
         testRunPage = new TestRunPage(driver);
+        projectAPIstep = new DeleteProjectStep();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return driver;
     }
 
-    @AfterMethod(alwaysRun = true, description = "Закрытие браузера")
+    @AfterMethod(alwaysRun = true, description = "Close browser")
     public void tearDown(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
             takeScreenshot(driver);
         }
-        driver.quit();
+        if (driver != null) {
+            new DeleteAllProjects();
+            driver.quit();
+        }
     }
 }

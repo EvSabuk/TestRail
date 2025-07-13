@@ -1,7 +1,8 @@
-package steps;
+package steps.ui;
 
 import dto.TestCases;
 import dto.TestCasesFactory;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import pages.AddTestCasesPage;
@@ -27,11 +28,13 @@ public class TestCaseStep {
 
     }
 
-    public void createTestCase() {
+    @Step("Creating a Test Case.")
+    public String createTestCase() {
         int quantitySteps = 1 + (int) (Math.random() * 4);
-        log.info("Test Case is created");
         TestCases testCases = TestCasesFactory.getTestCases("Test Cases", "Test Case (Steps)",
-                "Functional", "Low", "Review", "Me", "Ranorex", TestCasesFactory.generateSteps(quantitySteps));
+                "Functional", "Low", "Review", "Me", "Ranorex",
+                TestCasesFactory.generateSteps(quantitySteps));
+        log.info("Creating a Milestone with the title '{}.'", testCases.getTestCaseTitle());
         projectPage.openTestCasesPage();
         testCasesPage.isPageOpened()
                 .clickAddTestCase();
@@ -39,10 +42,11 @@ public class TestCaseStep {
                 .createTestCase(testCases);
         testCasePage.isPageOpened();
         projectPage.openOverviewTab();
+        return testCases.getTestCaseTitle();
     }
 
     public void createMultipleTestCases(int times) {
-        for (int i = 0; i< times; i++) {
+        for (int i = 0; i < times; i++) {
             createTestCase();
         }
     }

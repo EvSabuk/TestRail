@@ -1,10 +1,10 @@
 package pages;
 
-import dto.Step;
+import dto.TestCaseStep;
 import dto.TestCases;
+import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,14 +51,16 @@ public class AddTestCasesPage extends BasePage {
         return this;
     }
 
+    @Step("Click on the 'Save' button on the 'Add Test Case' page.")
     public ProjectsPage clickSaveButton() {
-        log.info("Click on the 'Save' button on the 'Add Test Case' page");
+        log.info("Click on the 'Save' button on the 'Add Test Case' page.");
         driver.findElement(SAVE_BUTTON).click();
         return new ProjectsPage(driver);
     }
 
+    @Step("Click on the 'Add Step' button.")
     public AddTestCasesPage clickAddStepButton() {
-        log.info("Click on the 'Add Step' button");
+        log.info("Click on the 'Add Step' button.");
         driver.findElement(ADD_STEP_BUTTON).click();
         return this;
     }
@@ -83,8 +85,9 @@ public class AddTestCasesPage extends BasePage {
         new Picklist(driver, label).select(value);
     }
 
+    @Step("Create the Test Case.")
     public AddTestCasesPage createTestCase(TestCases testCases) {
-        log.info("Creating an account {}", testCases.getTestCaseTitle());
+        log.info("Creating an Test Case '{}'.", testCases.getTestCaseTitle());
         selectPicklist(SECTION, testCases.getTestCaseSection());
         fillInput(TEST_CASE_TITLE, testCases.getTestCaseTitle());
         selectPicklist(TEMPLATE, testCases.getTestCaseTemplate());
@@ -96,12 +99,20 @@ public class AddTestCasesPage extends BasePage {
         selectPicklist(AUTOMATION_TYPE, testCases.getTestCaseAutomationType());
         fillTextarea(PRECONDITIONS, testCases.getTestCasePreconditions());
         int count = 0;
-        for (Step step : testCases.getSteps()) {
+        for (TestCaseStep step : testCases.getSteps()) {
             count++;
             clickAddStepButton();
             fillActualResult(count, step.actualResult());
             fillExpectedResult(count, step.expectedResult());
         }
+        clickSaveButton();
+        return this;
+    }
+
+    @Step("Edit title for Test Case.")
+    public AddTestCasesPage updateTitleTestCase(TestCases testCases) {
+        log.info("Editing Test case '{}'.", testCases.getTestCaseTitle());
+        fillInput(TEST_CASE_TITLE, testCases.getTestCaseTitle());
         clickSaveButton();
         return this;
     }
