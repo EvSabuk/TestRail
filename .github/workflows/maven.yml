@@ -27,7 +27,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run tests
-      run: mvn clean test -Demail=EMAIL -Dpassword=$PASS
+      run: mvn clean test -Demail=$EMAIL -Dpassword=$PASS
     - name: Run tests regression testing
       run: mvn clean test -DxsuiteXmlFile='src/test/resources/RegressionTesting.xml' -Demail=$EMAIL -Dpassword=$PASS
 
