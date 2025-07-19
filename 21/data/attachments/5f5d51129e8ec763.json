@@ -1,0 +1,245 @@
+{
+    "offset": 0,
+    "limit": 250,
+    "size": 13,
+    "_links": {
+        "next": null,
+        "prev": null
+    },
+    "projects": [
+        {
+            "id": 1027,
+            "name": "Koepp and Sons",
+            "announcement": "mole",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1027",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1028,
+            "name": "Gusikowski LLC",
+            "announcement": "whale",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1028",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1029,
+            "name": "Jenkins LLC",
+            "announcement": "Scurver",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1029",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1030,
+            "name": "Dooley-Fahey",
+            "announcement": "Kernun",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1030",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1031,
+            "name": "Reynolds LLC",
+            "announcement": "Ice Giant",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1031",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1032,
+            "name": "Klocko-Harber",
+            "announcement": "Alghoul",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1032",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1033,
+            "name": "Cummings Group",
+            "announcement": "Grottore",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1033",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1034,
+            "name": "Streich, Davis and Schulist",
+            "announcement": "Hound of the Wild Hunt",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1034",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1035,
+            "name": "Effertz-Volkman",
+            "announcement": "Drowner",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1035",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1036,
+            "name": "Koch-Williamson",
+            "announcement": "Fire Elemental",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1036",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1037,
+            "name": "Harris-Bechtelar",
+            "announcement": "Pixie",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1037",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1038,
+            "name": "Cremin-Hackett",
+            "announcement": "Mucknixer",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1038",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 1039,
+            "name": "Dietrich Inc",
+            "announcement": "Grave Hag",
+            "show_announcement": true,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 1,
+            "default_role_id": null,
+            "case_statuses_enabled": true,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/1039",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        }
+    ]
+}
