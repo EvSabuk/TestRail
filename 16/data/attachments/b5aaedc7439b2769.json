@@ -1,0 +1,18 @@
+{
+    "id": 882,
+    "name": "Feeney Group",
+    "announcement": "rat",
+    "show_announcement": false,
+    "is_completed": false,
+    "completed_on": null,
+    "suite_mode": 3,
+    "default_role_id": null,
+    "case_statuses_enabled": false,
+    "url": "https://perfectcar.testrail.io/index.php?/projects/overview/882",
+    "users": [
+        
+    ],
+    "groups": [
+        
+    ]
+}

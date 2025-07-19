@@ -1,0 +1,65 @@
+{
+    "offset": 0,
+    "limit": 250,
+    "size": 3,
+    "_links": {
+        "next": null,
+        "prev": null
+    },
+    "projects": [
+        {
+            "id": 882,
+            "name": "Glover and Sons",
+            "announcement": "panda",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/882",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 916,
+            "name": "D'Amore Group",
+            "announcement": "mole",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/916",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        },
+        {
+            "id": 917,
+            "name": "Herman-Ondricka",
+            "announcement": "platypus",
+            "show_announcement": false,
+            "is_completed": false,
+            "completed_on": null,
+            "suite_mode": 3,
+            "default_role_id": null,
+            "case_statuses_enabled": false,
+            "url": "https://perfectcar.testrail.io/index.php?/projects/overview/917",
+            "users": [
+                
+            ],
+            "groups": [
+                
+            ]
+        }
+    ]
+}
