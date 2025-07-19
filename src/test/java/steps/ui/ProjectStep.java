@@ -47,6 +47,5 @@ public class ProjectStep {
         projectsPage.isPageOpened();
         int projectId = projectsPage.getProjectId(project.getProjectName());
         projectPage.openProjectById(projectId);
-        projectPage.isPageOpened();
     }
 }

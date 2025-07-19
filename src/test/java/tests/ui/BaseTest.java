@@ -16,14 +16,14 @@ import steps.ui.*;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
-import static listeners.AllureUtils.takeScreenshot;
+import static utils.AllureUtils.takeScreenshot;
 
 @Listeners(TestListener.class)
 public class BaseTest {
 
     WebDriver driver;
     WebDriverWait wait;
-    SoftAssert softAssert;
+    protected SoftAssert softAssert;
     LoginStep loginStep;
     ProjectStep projectStep;
     MilestoneStep milestoneStep;
@@ -41,7 +41,7 @@ public class BaseTest {
     AddTestCasesPage addTestCasesPage;
     TestCasePage testCasePage;
     TestRunPage testRunPage;
-    public DeleteProjectStep projectAPIstep;
+    protected DeleteProjectStep projectAPIStep;
 
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true, description = "Setup browser")
@@ -57,7 +57,7 @@ public class BaseTest {
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-infobars");
             if (System.getProperty("headless", "true").equals("true")) {
-                options.addArguments("--headless=new");
+                //options.addArguments("--headless=new");
             }
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -91,7 +91,7 @@ public class BaseTest {
         testCaseStep = new TestCaseStep(driver);
         testCasePage = new TestCasePage(driver);
         testRunPage = new TestRunPage(driver);
-        projectAPIstep = new DeleteProjectStep();
+        projectAPIStep = new DeleteProjectStep();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return driver;
     }

@@ -8,7 +8,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import io.restassured.http.Method;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.ui.BaseTest;
 import java.util.List;
@@ -71,11 +70,12 @@ public class CRUDProjectTest extends BaseTest {
         ResponseWrapper getFirstProject = new BaseApi()
                 .request(Method.GET, BASE_URI + ALL_PROJECTS_URI);
         String projectName = getFirstProject.getResponse().jsonPath().getString("projects[0].name");
-        projectAPIstep.deleteProjectAPI(projectName);
+        projectAPIStep.deleteProjectAPI(projectName);
         ResponseWrapper listOfProjects = new BaseApi()
                 .request(Method.GET, BASE_URI + ALL_PROJECTS_URI);
         List<String> projectNames = listOfProjects.getResponse().jsonPath().getList("projects.name");
-        Assert.assertEquals(getFirstProject.getStatusCode(), 200, "Expected 200 after deletion");
-        Assert.assertFalse(projectNames.contains(projectName), "Project is not deleted");
+        softAssert.assertEquals(getFirstProject.getStatusCode(), 200, "Expected 200 after deletion");
+        softAssert.assertFalse(projectNames.contains(projectName), "Project is not deleted");
+        softAssert.assertAll();
     }
 }
